@@ -50,11 +50,12 @@
 </template>
 <script>
     export default {
-        el:"#bar",
-        data:{
-            all:20, //总页数
-            cur:1,  //当前页数
-        },
+        // el:"#bar",
+        // data:{
+        //     all:20, //总页数
+        //     cur:1,  //当前页数
+        // },
+        props:['all','cur'],
         computed: {
             indexs: function(){
               var left = 1
