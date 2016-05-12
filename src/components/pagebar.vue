@@ -6,8 +6,11 @@
     li{
         list-style: none
     }
+    .page-bar{
+        overflow: hidden;
+    }
     .page-bar li:first-child>a {
-       margin-left: 0px
+       margin-left: 0px;
     }
     .page-bar a{
         border: 1px solid #ddd;

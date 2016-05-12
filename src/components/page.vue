@@ -1,6 +1,7 @@
 <script>
 	import pagebar from './pagebar';
 	import tablepage from './table';
+	import app from './app.vue';
 
 	export default{
 		el:"#page",
@@ -23,7 +24,7 @@
 			}
 		},
 		components:{
-			pagebar,tablepage
+			pagebar,tablepage,app
 		}
 	}
 </script>
@@ -31,6 +32,7 @@
 	<div class="m-page">
 		<tablepage :pagedata="pagedata" ></tablepage>
 		<pagebar :all="all" :cur.sync="cur" ></pagebar>
+		<app></app>
 	</div>
 </template>
 <style lang="less">
