@@ -33,6 +33,7 @@
 		<tablepage :pagedata="pagedata" ></tablepage>
 		<pagebar :all="all" :cur.sync="cur" ></pagebar>
 		<app></app>
+		<app></app>
 	</div>
 </template>
 <style lang="less">

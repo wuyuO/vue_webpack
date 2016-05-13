@@ -1,17 +1,32 @@
+// import Vue from 'vue'
+// import Vuex from 'vuex'
+
+// Vue.use(Vuex)
+
+// const state = {
+// 	// 设置启动状态
+// 	count:0
+// }
+
+// const mutations = {
+// 	INCREMENT(state,amount){
+// 		state.count = state.count + amount
+// 	}
+// }
+
+// export default new Vuex.Store({
+// 	state,
+// 	mutations
+// })
+
 import Vue from 'vue'
 import Vuex from 'vuex'
+import crement from './modules/crement.js'
 
 Vue.use(Vuex)
 
-const state = {
-	// 设置启动状态
-}
-
-const mutations = {
-
-}
-
 export default new Vuex.Store({
-	state,
-	mutations
+	modules:{
+		crement
+	}
 })
