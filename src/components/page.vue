@@ -4,7 +4,7 @@
 	import app from './app.vue';
 
 	export default{
-		el:"#page",
+		// el:"#page",
 		data:function(){
 			return {
 				all:20,
@@ -34,6 +34,8 @@
 		<pagebar :all="all" :cur.sync="cur" ></pagebar>
 		<app></app>
 		<app></app>
+		<a v-link="{ name:'router1' }">test01</a>
+		<a v-link="{ name:'router2' }">test02</a>
 	</div>
 </template>
 <style lang="less">

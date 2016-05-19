@@ -2,6 +2,7 @@
 	<div>
 		<Display></Display>
 		<Increment></Increment>
+		<router-view></router-view>
 	</div>
 </template>
 <script>

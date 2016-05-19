@@ -2,7 +2,23 @@
 // document.write("this is entry.js");
 import Vue from "vue";
 import page from "./components/page";
+import VueRouter from "vue-router";
+import { configRouter } from './router.js';
 
+Vue.use(VueRouter);
 Vue.config.debug = true;
 
-let model = new Vue(page);
+// create router
+var router = new VueRouter({
+	history:true,
+	saveScrollPosition:true
+});
+
+configRouter(router);
+
+//let model = new Vue(page);
+
+const App = Vue.extend(page)
+router.start(App, '#page')
+
+window.router = router
