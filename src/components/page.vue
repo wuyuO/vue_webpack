@@ -33,7 +33,6 @@
 		<tablepage :pagedata="pagedata" ></tablepage>
 		<pagebar :all="all" :cur.sync="cur" ></pagebar>
 		<app></app>
-		<app></app>
 		<a v-link="{ name:'router1' }">test01</a>
 		<a v-link="{ name:'router2' }">test02</a>
 	</div>
