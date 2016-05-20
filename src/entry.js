@@ -1,8 +1,8 @@
 // import css from "./asset/css/test.less";
 // document.write("this is entry.js");
 import Vue from "vue";
-import page from "./components/page";
 import VueRouter from "vue-router";
+import page from "./components/page";
 import { configRouter } from './router.js';
 
 Vue.use(VueRouter);

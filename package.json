@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "css-loader": "^0.23.1",
+    "express": "^4.13.4",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
     "vue-resource": "^0.7.0",
