@@ -29,7 +29,7 @@
 	}
 </script>
 <template>
-	<div class="m-page">
+	<div class="m-page bg">
 		<tablepage :pagedata="pagedata" ></tablepage>
 		<pagebar :all="all" :cur.sync="cur" ></pagebar>
 		<app></app>
@@ -43,4 +43,5 @@
 		border: 1px #dcdcdc solid;
 		overflow: hidden;
 	}
+	.bg{background: url("/src/asset/img/bg.jpg") no-repeat; }
 </style>

@@ -1,5 +1,6 @@
+
 <template>
-	<div>
+	<div >
 		<Display></Display>
 		<Increment></Increment>
 		<router-view></router-view>
