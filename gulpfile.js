@@ -21,6 +21,12 @@ gulp.task("server", function(callback) {
         quiet: false,
   		noInfo: false,
   		publicPath: config.output.publicPath,
+        proxy: {
+          '^~ /web/public/api/': {
+            target: 'http://8082.tuikor.com',
+            secure: false
+          }
+        },
         stats: { colors: true }
     }).listen(DEV_PORT, "localhost", function(err) {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
