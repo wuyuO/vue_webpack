@@ -1,4 +1,4 @@
-// import css from "./asset/css/test.less";
+import css from "./asset/css/test.less";
 // document.write("this is entry.js");
 import Vue from "vue";
 import VueRouter from "vue-router";

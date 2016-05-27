@@ -27,4 +27,4 @@ Vue.http.interceptors.push({
 	}
 })
 
-export const TestResource = Vue.resource(API_ROOT + 'users{/method}')
+export const TestResource = Vue.resource(API_ROOT + '{method}')

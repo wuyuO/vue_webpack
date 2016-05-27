@@ -2,6 +2,7 @@
 	import pagebar from './pagebar';
 	import tablepage from './table';
 	import app from './app.vue';
+	import store from '../vuex/store.js'
 
 	export default{
 		// el:"#page",
@@ -25,7 +26,8 @@
 		},
 		components:{
 			pagebar,tablepage,app
-		}
+		},
+		store
 	}
 </script>
 <template>
@@ -42,6 +44,7 @@
 		padding: 20px;
 		border: 1px #dcdcdc solid;
 		overflow: hidden;
+		background: url("../asset/img/bg.jpg") no-repeat;
 	}
-	.bg{background: url("/src/asset/img/bg.jpg") no-repeat; }
+	
 </style>

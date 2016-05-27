@@ -1,6 +1,8 @@
-
+<style >
+	.abg{background: url("http://scimg.jb51.net/allimg/160428/77-16042Q4395Y23.jpg") no-repeat;}
+</style>
 <template>
-	<div >
+	<div class="abg">
 		<Display></Display>
 		<Increment></Increment>
 		<router-view></router-view>
@@ -9,12 +11,11 @@
 <script>
 import Display from './Display.vue'
 import Increment from './Increment.vue'
-import store from '../vuex/store.js'
+
 
 export default{
 	components:{
 		Display,Increment
-	},
-	store
+	}
 }
 </script>

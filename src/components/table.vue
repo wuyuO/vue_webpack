@@ -5,7 +5,8 @@
 		border-spacing: 0;
     	border-collapse: collapse;
     	border: 1px solid #ddd;
-    	margin-bottom: 20px
+    	margin-bottom: 20px;
+    	background: url("../asset/img/bg.jpg") no-repeat;
 	}
 	thead{
 		display: table-header-group;

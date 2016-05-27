@@ -99,6 +99,7 @@
         },
         methods: {
             btnClick: function(data){//页码点击事件
+                console.log($(this));
                 if(data != this.cur){
                     this.cur = data 
                 }
