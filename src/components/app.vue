@@ -12,6 +12,7 @@ import store from '../vuex/store.js'
 
 export default{
 	components:{
+		
 		Display,Increment
 	},
 	store
