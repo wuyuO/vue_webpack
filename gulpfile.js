@@ -22,9 +22,11 @@ gulp.task("server", function(callback) {
   		noInfo: false,
   		publicPath: config.output.publicPath,
         proxy: {
-          '^~ /web/public/api/': {
-            target: 'http://8082.tuikor.com',
-            secure: false
+          '/api/*': {
+            target: 'http://45.32.88.92/',
+            rewrite: function(req) {
+                 req.url = req.url.replace(/^\/api/, '');
+               }
           }
         },
         stats: { colors: true }
@@ -59,4 +61,3 @@ gulp.task('env',function(){
 	    NODE_ENV: 'production'
 	});
 });
-
