@@ -18,8 +18,8 @@ module.exports = {
             { test: require.resolve("jquery"), loader: "expose?$!expose?jQuery" },   //全局jquery
             { test: /\.vue$/, loader: 'vue' },
             { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-            //{ test: /\.css$/, loader: "style!css!autoprefixer?strictMath&noIeCompat" },
-            //{ test: /\.less$/, loader: 'style!css!less?sourceMap&strictMath&noIeCompat!autoprefixer?{browsers:["last 2 version", "Firefox 15"]}'},
+            // { test: /\.css$/, loader: "style!css!autoprefixer?strictMath&noIeCompat" },
+            // { test: /\.less$/, loader: 'style!css!less?sourceMap&strictMath&noIeCompat!autoprefixer?{browsers:["last 2 version", "Firefox 15"]}'},
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css?strictMath&noIeCompat","autoprefixer-loader") },
             { test: /\.less$/, loader: ExtractTextPlugin.extract("style", "css","less?strictMath&noIeCompat","autoprefixer-loader??{browsers:['last 2 version', 'Firefox 15']}") },
             { test: /\.(jpe?g|png|gif)$/i, loaders: [
@@ -62,4 +62,5 @@ module.exports = {
             components: path.join(__dirname, './src/components')
         }
     },
+    devtool: 'eval-source-map'
 };

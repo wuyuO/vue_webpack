@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "hot": "webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server --inline --hot --colors --config ./webpack.config.dev.js",
     "start": "gulp server",
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:dist": "rm -rf dist && webpack --colors --config ./webpack.config.pro.js"
   },
   "author": "",
   "license": "ISC",
@@ -47,6 +49,7 @@
     "vue": "^1.0.21",
     "vue-hot-reload-api": "^1.2.2",
     "vue-html-loader": "^1.2.0",
-    "vue-loader": "^7.2.0"
+    "vue-loader": "^8.0.0",
+    "vue-style-loader": "^1.0.0"
   }
 }

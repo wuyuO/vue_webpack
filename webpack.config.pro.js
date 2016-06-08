@@ -40,14 +40,13 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env':{
-            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'NODE_ENV': JSON.stringify("production")
           }
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
-            },
-            sourceMap:false
+            }
         }),
         new ExtractTextPlugin('[hash:8].style.css', { allChunks: true }),
         new HtmlWebpackPlugin({
