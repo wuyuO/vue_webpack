@@ -20,12 +20,13 @@ module.exports = {
             { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
             // { test: /\.css$/, loader: "style!css!autoprefixer?strictMath&noIeCompat" },
             // { test: /\.less$/, loader: 'style!css!less?sourceMap&strictMath&noIeCompat!autoprefixer?{browsers:["last 2 version", "Firefox 15"]}'},
-            { test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css?strictMath&noIeCompat","autoprefixer-loader") },
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap') },
             { test: /\.less$/, loader: ExtractTextPlugin.extract("style", "css","less?strictMath&noIeCompat","autoprefixer-loader??{browsers:['last 2 version', 'Firefox 15']}") },
             { test: /\.(jpe?g|png|gif)$/i, loaders: [
                 'url?limit=10000&name=images/[hash:8].[name].[ext]',
                 'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
-            ]}
+            ]},
+            { test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=10000&name=fonts/[hash:8].[name].[ext]'}
         ]
     },
     vue: {
