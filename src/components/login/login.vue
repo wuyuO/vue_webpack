@@ -1,34 +1,10 @@
-<template >
-   <div class="m-login">
-     <a class="tt" href="##"><span>WEBSITE</span>&nbsp;<span>Admin</span></a>
-     <div class="box">
-       <div class="cnt">
-         <h6>登录</h6>
-         <div class="f-posrel">
-           <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-           <input class="form-control" type="text" placeholder="个人账号">
-         </div>
-         <div class="f-posrel">
-           <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
-           <input class="form-control f-mgtop20" type="password" placeholder="密码">
-         </div>
-       </div><!--end of cnt -->
-     </div>
-   </div>
-</template>
-<script>
-  export default{
-
-  }
-</script>
-<style lang='less'>
-   html{
+<style lang='less' scoped>
+   img{
      height: 100%;
-     background: url(../../asset/img/login.jpg) no-repeat top left;
+     width: 100%;
      background-size: cover;
    }
-   .f-mgtop20{margin-top: 20px}
-   .f-posrel{position: relative}
+
    .m-login{
       position: absolute;
       top: 90px;
@@ -53,6 +29,15 @@
         .cnt{
           width: 82%;
           margin: 0 auto;
+          .remember{
+            text-align: left;
+            margin-top: 20px;
+            font-size: 13px;
+          }
+          label{
+            font-weight: bold;
+            color:#4a576a;
+          }
         }
         h6{
           text-transform: uppercase;
@@ -61,11 +46,47 @@
           font-weight: 600;
         }
         i{
-          color: #a9a9a9;
+          color: #dadada;
           position: absolute;
           right: 10px;
-          top:8px
+          top:3px
         }
       }
    }
 </style>
+<template >
+   <div class="">
+       <img src="../../asset/img/login.jpg" alt="登录背景" />
+       <div class="m-login">
+         <a class="tt" href="##"><span>WEBSITE</span>&nbsp;<span>Admin</span></a>
+         <div class="box">
+           <div class="cnt">
+             <h6>登录</h6>
+             <form role="form">
+                 <div class="f-posrel">
+                   <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                   <input class="form-control" type="text" placeholder="个人账号">
+                 </div>
+                 <div class="f-posrel">
+                   <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+                   <input class="form-control f-mgtop20" type="password" placeholder="密码">
+                 </div>
+                 <div class="remember ">
+                   <label class="checkbox-inline">
+                       <input class="f-top_3" type="checkbox" id="inlineCheckbox3" value="option3"> 记住我
+                    </label>
+                 </div>
+                 <div class="text-center f-mgtop20">
+                   <button type="button" class="btn btn-primary btn-block">登录</button>
+                 </div>
+            </form>
+         </div><!--end of cnt -->
+       </div><!--end of box -->
+       </div>
+   </div>
+</template>
+<script>
+  export default{
+
+  }
+</script>

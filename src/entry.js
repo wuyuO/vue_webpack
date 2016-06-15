@@ -20,6 +20,6 @@ configRouter(router);
 //let model = new Vue(page);
 
 const App = Vue.extend(app)
-router.start(App, 'body')
+router.start(App, '#app')
 
 window.router = router

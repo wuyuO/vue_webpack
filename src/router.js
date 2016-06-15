@@ -8,5 +8,9 @@ export function configRouter (router) {
 		// 	name:"router2",
 		// 	component:require('./components/router02.vue')
 		// }
+		"/login":{
+			name:"router2",
+			component:require('./components/login/login.vue')
+		}
 	})
 }
