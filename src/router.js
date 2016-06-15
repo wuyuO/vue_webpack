@@ -9,8 +9,12 @@ export function configRouter (router) {
 		// 	component:require('./components/router02.vue')
 		// }
 		"/login":{
-			name:"router2",
+			name:"login",
 			component:require('./components/login/login.vue')
+		},
+		"/home":{
+			name:"home",
+			component:require('./components/home/home.vue')
 		}
 	})
 }
