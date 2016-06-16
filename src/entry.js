@@ -2,6 +2,7 @@ import css from "./asset/css/reset.less";
 // document.write("this is entry.js");
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import font from 'font-awesome/css/font-awesome.css'
+import jquery from 'jquery'
 import Vue from "vue";
 import VueRouter from "vue-router";
 import app from "./components/App.vue";

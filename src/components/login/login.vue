@@ -49,7 +49,7 @@
           color: #dadada;
           position: absolute;
           right: 10px;
-          top:3px
+          top:8px
         }
       }
    }
