@@ -1,11 +1,13 @@
 <style media="screen" lang="less" scoped>
-
+  .g-wrap{margin-top: 50px}
 </style>
 <template >
-    <top></top>
-    <left></left>
-    <router-view></router-view>
-    <right></right>
+      <top></top>
+      <div class="g-wrap">
+        <left></left>
+        <router-view></router-view>
+        <right></right>
+      </div>
 </template>
 <script>
   import top from "./top.vue"

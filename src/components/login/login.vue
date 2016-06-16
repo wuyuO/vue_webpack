@@ -1,10 +1,5 @@
 <style lang='less' scoped>
-   img{
-     height: 100%;
-     width: 100%;
-     background-size: cover;
-   }
-
+   img{height: 100%;width: 100%;background-size: cover;}
    .m-login{
       position: absolute;
       top: 90px;
@@ -49,7 +44,7 @@
           color: #dadada;
           position: absolute;
           right: 10px;
-          top:8px
+          top:4px
         }
       }
    }

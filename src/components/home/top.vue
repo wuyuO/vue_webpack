@@ -10,7 +10,7 @@
   .top_nav .top_nav_icon .msg-red{ background-color: #f22613}
   .top_nav .top_nav_icon .msg-blue{ background-color: #3498db}
   .top_nav .top_nav_icon .msg-yell{ background-color: #f9bf3b}
-  .top_nav .top_nav_icon .img{ width: 40px;height: 40px;background-color: rgb(221, 222, 224); border: 1px solid #ccc;padding:1px;}
+  .top_nav .top_nav_icon .img{ width: 40px;height: 40px;background-color: rgb(221, 222, 224); border: 1px solid #eee;padding:2px;}
   .top_nav .top_nav_icon .user-menu{top:105%; width: 175px;right:3px; }
 </style>
 <template >
@@ -37,7 +37,7 @@
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
-            <li><a href="#">login out</a></li>
+            <li><a v-link="{ name:'login' }">login out</a></li>
           </ul>
         </li>
       </ul>
