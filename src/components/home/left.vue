@@ -1,11 +1,94 @@
 <style media="screen" lang="less" scoped>
+  .m-nav_menu{background-color: #233646;width: 220px;position: relative; top:0px;z-index: 10001;height: 100%}
+  .m-nav_menu > li{color: #a7b1c2;font-size:12px;font-weight: 600}
+  .m-nav_menu > li.active{border-left:3px solid #18bc9c;background-color: #293846;}
+  .m-nav_menu > li.active .first{color: #fff;}
+  .m-nav_menu > li .first{padding:10px 15px 10px 25px;}
+  .m-nav_menu > li:not(:first-child):hover{border-left:3px solid #18bc9c;}
+  .m-nav_menu > li > .first:hover{color: #fff;}
+  .m-nav_menu > li:first-child{padding:0;font-weight: 100;}
+  .m-user{background-color: #303641;padding:15px; color:#fff}
+  .m-user .left{width: 70px;position: absolute;}
+  .m-user .right{width: 100%;padding-left: 80px;}
+  .m-user img{width: 65px; height:65px;background-color:#303641;border:4px solid #aaa;}
 
+  /*--child menu --*/
+  .m-nav_menu .child_menu{padding: 0 10px 0 48px}
+  .m-nav_menu .child_menu >li{padding: 8px 0;}
+  li.active .child_menu >li:hover,li.active .child_menu >li.active{color: #fff;}
 </style>
 <template >
-  <h1>this left</h1>
+  <ul class="nav m-nav_menu">
+    <li class="nav-header">
+      <div class="m-user f-posrel">
+        <div class="left">
+          <img  src="../../asset/img/login.jpg" alt="..." class="img-circle ">
+        </div>
+        <div class="right">
+          <div>Welcome</div>
+          <h4>user name</h4>
+          <div class="text-left">
+            <span class="label label-info">管理员</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li  class="active">
+      <div v-on:click="menu_active" class="first">
+        <i class="fa fa-th-large  f-mgright15 " aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right " aria-hidden="true"></i>
+      </div>
+      <ul class="nav child_menu">
+        <li v-on:click="child_active" class="active">This is child menu</li>
+        <li v-on:click="child_active">This is child menu</li>
+        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
+      </ul>
+    </li>
+    <li >
+      <div v-on:click="menu_active" class="first">
+        <i class="fa fa-diamond  f-mgright15" aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right f-rotate90" aria-hidden="true"></i>
+      </div>
+      <ul class="nav child_menu f-dis-hide">
+        <li v-on:click="child_active" class="active">This is child menu</li>
+        <li v-on:click="child_active">This is child menu</li>
+        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
+      </ul>
+    </li>
+    <li >
+      <div v-on:click="menu_active" class="first">
+        <i class="fa fa-cogs  f-mgright15" aria-hidden="true"></i>后台管理
+      </div>
+    </li>
+    <li >
+      <div v-on:click="menu_active" class="first">
+        <i class="fa fa-briefcase  f-mgright15" aria-hidden="true"></i>后台管理</i>
+      </div>
+    </li>
+    <li >
+      <div v-on:click="menu_active" class="first">
+        <i class="fa fa-home  f-mgright15" aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right f-rotate90" aria-hidden="true"></i>
+      </div>
+      <ul class="nav child_menu f-dis-hide">
+        <li v-on:click="child_active" class="active">This is child menu</li>
+        <li v-on:click="child_active">This is child menu</li>
+        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
+      </ul>
+    </li>
+  </ul>
 </template>
 <script>
   export default{
-
+    methods:{
+      menu_active:function(event){
+        //console.log(event.currentTarget.parentNode);
+        let self = $(event.currentTarget);
+        self.children('.fa-chevron-down').toggleClass('f-rotate90').end().parent().siblings().find('.fa-chevron-down').addClass('f-rotate90');
+        self.parent().addClass('active').siblings().removeClass('active').find('.child_menu').hide();
+        self.next('.child_menu').toggle();
+      },
+      child_active:function(event){
+        let self = $(event.currentTarget);
+        self.addClass('active').siblings().removeClass('active');
+      }
+    }
   }
 </script>
