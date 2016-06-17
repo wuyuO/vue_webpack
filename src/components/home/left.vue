@@ -1,11 +1,11 @@
 <style media="screen" lang="less" scoped>
-  .m-nav_menu{background-color: #233646;width: 220px;position: relative; top:0px;z-index: 10001;height: 100%}
+  .m-nav_menu{background-color: #233646;width: 220px;position: fixed; top:0px;z-index: 10001;height: 100%}
   .m-nav_menu > li{color: #a7b1c2;font-size:12px;font-weight: 600}
   .m-nav_menu > li.active{border-left:3px solid #18bc9c;background-color: #293846;}
   .m-nav_menu > li.active .first{color: #fff;}
   .m-nav_menu > li .first{padding:10px 15px 10px 25px;}
   .m-nav_menu > li:not(:first-child):hover{border-left:3px solid #18bc9c;}
-  .m-nav_menu > li > .first:hover{color: #fff;}
+  .m-nav_menu > li > .first:hover{color: #fff;background-color: #293846;}
   .m-nav_menu > li:first-child{padding:0;font-weight: 100;}
   .m-user{background-color: #303641;padding:15px; color:#fff}
   .m-user .left{width: 70px;position: absolute;}
@@ -35,7 +35,7 @@
     </li>
     <li  class="active">
       <div v-on:click="menu_active" class="first">
-        <i class="fa fa-th-large  f-mgright15 " aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right " aria-hidden="true"></i>
+        <i class="fa fa-th-large  f-mgright15 " aria-hidden="true"></i>后台管理<span class="label label-success f-mgleft15">new</span><i class="fa fa-chevron-down pull-right " aria-hidden="true"></i>
       </div>
       <ul class="nav child_menu">
         <li v-on:click="child_active" class="active">This is child menu</li>
