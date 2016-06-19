@@ -1,5 +1,5 @@
 <style media="screen" lang="less" scoped>
-  .m-nav_menu{background-color: #233646;width: 220px;position: fixed; top:0px;z-index: 10001;height: 100%}
+  .m-nav_menu{background-color: #233646;width: 220px;position: fixed; top:50px;z-index: 10001;height: 100%}
   .m-nav_menu > li{color: #a7b1c2;font-size:12px;font-weight: 600}
   .m-nav_menu > li.active{border-left:3px solid #18bc9c;background-color: #293846;}
   .m-nav_menu > li.active .first{color: #fff;}
@@ -77,6 +77,9 @@
 </template>
 <script>
   export default{
+    data:function(){
+      
+    },
     methods:{
       menu_active:function(event){
         //console.log(event.currentTarget.parentNode);

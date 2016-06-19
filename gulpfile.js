@@ -20,6 +20,7 @@ gulp.task("server", function(callback) {
         hot: true,
         quiet: false,
   		noInfo: false,
+      historyApiFallback: true,
   		publicPath: config.output.publicPath,
         proxy: {
           '/api/*': {

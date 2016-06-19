@@ -13,6 +13,7 @@ Vue.config.debug = true;
 
 // create router
 var router = new VueRouter({
+	history:true,
 	saveScrollPosition:true
 });
 
