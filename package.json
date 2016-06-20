@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hot": "webpack-dev-server --inline --hot",
-    "dev": "webpack-dev-server --inline --hot --colors --config ./webpack.config.dev.js --host 0.0.0.0 --port 4000",
+    "dev": "webpack-dev-server --inline --hot --colors --config ./webpack.config.dev.js --host 0.0.0.0 --port 4001",
     "start": "gulp server",
     "build": "gulp build",
     "build:dist": "rm -rf dist && webpack --colors --config ./webpack.config.pro.js"
@@ -48,11 +48,13 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "open-browser-webpack-plugin": "^0.0.2",
+    "postcss-sprites": "^3.1.2",
     "url-loader": "^0.5.7",
     "vue": "^1.0.21",
     "vue-hot-reload-api": "^1.2.2",
     "vue-html-loader": "^1.2.0",
     "vue-loader": "^8.0.0",
-    "vue-style-loader": "^1.0.0"
+    "vue-style-loader": "^1.0.0",
+    "webpack-spritesmith": "^0.2.3"
   }
 }

@@ -12,11 +12,11 @@ export function configRouter (router) {
 			name:"login",
 			component:require('./components/login/login.vue')
 		},
-		"/home":{
+		"/":{
 			name:"home",
 			component:require('./components/home/home.vue'),
 			subRoutes:{
-				'/':{
+				'':{
 					component:require('./components/table/table.vue')
 				}
 			}
