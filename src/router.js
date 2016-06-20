@@ -14,7 +14,13 @@ export function configRouter (router) {
 		},
 		"/home":{
 			name:"home",
-			component:require('./components/home/home.vue')
-		}
+			component:require('./components/home/home.vue'),
+			subRoutes:{
+				'/':{
+					component:require('./components/table/table.vue')
+				}
+			}
+
+		}//end home
 	})
 }
