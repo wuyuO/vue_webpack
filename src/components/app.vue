@@ -5,10 +5,10 @@
   </div>
 </template>
 <script>
-  import login from "./login/login.vue"
+  import store from '../vuex/store.js'
   export default{
     components:{
-      login
-    }
+    },
+    store
   }
 </script>

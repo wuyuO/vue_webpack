@@ -33,64 +33,41 @@
         </div>
       </div>
     </li>
-    <li  class="active">
-      <div v-on:click="menu_active" class="first">
-        <i class="fa fa-th-large  f-mgright15 " aria-hidden="true"></i>后台管理<span class="label label-success f-mgleft15">new</span><i class="fa fa-chevron-down pull-right " aria-hidden="true"></i>
-      </div>
-      <ul class="nav child_menu">
-        <li v-on:click="child_active" class="active">This is child menu</li>
-        <li v-on:click="child_active">This is child menu</li>
-        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
-      </ul>
-    </li>
-    <li >
-      <div v-on:click="menu_active" class="first">
-        <i class="fa fa-diamond  f-mgright15" aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right f-rotate90" aria-hidden="true"></i>
-      </div>
-      <ul class="nav child_menu f-dis-hide">
-        <li v-on:click="child_active" class="active">This is child menu</li>
-        <li v-on:click="child_active">This is child menu</li>
-        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
-      </ul>
-    </li>
-    <li >
-      <div v-on:click="menu_active" class="first">
-        <i class="fa fa-cogs  f-mgright15" aria-hidden="true"></i>后台管理
-      </div>
-    </li>
-    <li >
-      <div v-on:click="menu_active" class="first">
-        <i class="fa fa-briefcase  f-mgright15" aria-hidden="true"></i>后台管理</i>
-      </div>
-    </li>
-    <li >
-      <div v-on:click="menu_active" class="first">
-        <i class="fa fa-home  f-mgright15" aria-hidden="true"></i>后台管理<i class="fa fa-chevron-down pull-right f-rotate90" aria-hidden="true"></i>
-      </div>
-      <ul class="nav child_menu f-dis-hide">
-        <li v-on:click="child_active" class="active">This is child menu</li>
-        <li v-on:click="child_active">This is child menu</li>
-        <li v-on:click="child_active">This is child <span class="label label-warning pull-right">new</span></li>
-      </ul>
-    </li>
+    <!-- start for -->
+    <template v-for="(key, item) in menu">
+      <li :class="{'active':key == title}">
+        <div v-on:click="select_menu(key)" class="first">
+          <i class="fa {{item.icon}}  f-mgright15 " aria-hidden="true"></i>{{key}}
+          <span v-if="item.new" class="label label-success f-mgleft15">new</span>
+          <i v-if="item.hasOwnProperty('child_menu')" class="fa fa-chevron-down pull-right " :class="{'f-rotate90':!item.status}" aria-hidden="true"></i>
+        </div>
+        <ul v-if="key == title" class="nav child_menu">
+          <template v-for="(index, el) in item.child_menu">
+            <li v-on:click="child_active(index)" :class="{'active':index == child_index}">{{el.name}} <span v-if="el.new" class="label label-warning pull-right">new</span></li>
+          </template>
+        </ul>
+      </li>
+    </template>
+    <!-- end for -->
   </ul>
 </template>
 <script>
+  import {MENU} from '../../asset/json/menu.js'
   export default{
     data:function(){
-      
+      return {
+        menu:MENU,
+        title:"后台管理",
+        child_index:0
+      }
     },
     methods:{
-      menu_active:function(event){
-        //console.log(event.currentTarget.parentNode);
-        let self = $(event.currentTarget);
-        self.children('.fa-chevron-down').toggleClass('f-rotate90').end().parent().siblings().find('.fa-chevron-down').addClass('f-rotate90');
-        self.parent().addClass('active').siblings().removeClass('active').find('.child_menu').hide();
-        self.next('.child_menu').toggle();
+      select_menu:function(key,event){
+        this.title = key;
+        this.child_index = 0;
       },
-      child_active:function(event){
-        let self = $(event.currentTarget);
-        self.addClass('active').siblings().removeClass('active');
+      child_active:function(index){
+        this.child_index = index
       }
     }
   }

@@ -6,9 +6,12 @@ import jquery from 'jquery'
 import Vue from "vue";
 import VueRouter from "vue-router";
 import app from "./components/App.vue";
-import { configRouter } from './router.js';
+import { configRouter } from './router.js'
+import  VueValidator from'vue-validator'
 
 Vue.use(VueRouter);
+Vue.use(VueValidator)
+
 Vue.config.debug = true;
 
 // create router
